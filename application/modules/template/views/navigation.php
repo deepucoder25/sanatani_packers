@@ -183,12 +183,12 @@
               <div class="mega-social-wrap">
                 <span class="social-title">Connect With Us</span>
                 <div class="mega-social-links">
-                  <a href="#" class="social-icon-btn facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="social-icon-btn instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="social-icon-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#" class="social-icon-btn linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="<?= !empty($facebookhtml) ? $facebookhtml : '#' ?>" class="social-icon-btn facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="<?= !empty($instagramhtml) ? $instagramhtml : '#' ?>" class="social-icon-btn instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="<?= !empty($twitterhtml) ? $twitterhtml : '#' ?>" class="social-icon-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="<?= !empty($linkedinhtml) ? $linkedinhtml : '#' ?>" class="social-icon-btn linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                   <a href="<?= $megaWhatsappLink ?>" target="_blank" rel="noopener" class="social-icon-btn whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                  <a href="#" class="social-icon-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="<?= !empty($youtubehtml) ? $youtubehtml : '#' ?>" class="social-icon-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                 </div>
               </div>
             </div>
