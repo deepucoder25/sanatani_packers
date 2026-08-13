@@ -141,6 +141,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- CSS and Java Script -->
-  <link rel="stylesheet" href="<?= base_url("assets/css/style.css") ?>">
-  <link rel="stylesheet" href="<?= base_url("assets/css/navigation.css") ?>">
+  <link rel="stylesheet" href="<?= base_url("assets/css/style.css?v=" . time()) ?>">
+  <link rel="stylesheet" href="<?= base_url("assets/css/navigation.css?v=" . time()) ?>">
+  <link rel="stylesheet" href="<?= base_url("assets/css/slider.css?v=" . time()) ?>">
 </head>

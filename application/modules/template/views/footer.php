@@ -184,7 +184,7 @@ $floatingWhatsappLink = !empty($whatsapphtml)
                 <div class="contact-info-text">
                   <span class="contact-label">LOCATION</span>
                   <strong><?= $company3 ?></strong>
-                  <span class="contact-subtext">Deoghar, Jharkhand - 814112</span>
+                  <span class="contact-subtext"><?= $address ?></span>
                 </div>
               </div>
 
