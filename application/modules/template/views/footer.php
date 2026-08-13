@@ -71,12 +71,12 @@ $floatingWhatsappLink = !empty($whatsapphtml)
             <div class="h5 fw-bold text-white mb-3">Our Services</div>
 
             <ul>
-              <li><a href="<?= site_url('home-relocation') ?>">Home Relocation</a></li>
+              <li><a href="<?= site_url('packers-and-movers') ?>">Packers &amp; Movers</a></li>
+              <li><a href="<?= site_url('household-shifting') ?>">Household Shifting</a></li>
               <li><a href="<?= site_url('office-relocation') ?>">Office Relocation</a></li>
-              <li><a href="<?= site_url('car-transportation') ?>">Car Transportation</a></li>
-              <li><a href="<?= site_url('bike-transportation') ?>">Bike Transportation</a></li>
-              <li><a href="<?= site_url('packing-and-moving') ?>">Packing &amp; Moving Service</a></li>
-              <li><a href="<?= site_url('loading-unloading') ?>">Loading Unloading Service</a></li>
+              <li><a href="<?= site_url('local-and-domestic-moving') ?>">Local &amp; Domestic Moving</a></li>
+              <li><a href="<?= site_url('transportation-services') ?>">Transportation</a></li>
+              <li><a href="<?= site_url('goods-and-logistics') ?>">Goods &amp; Logistics</a></li>
             </ul>
           </div>
         </div>

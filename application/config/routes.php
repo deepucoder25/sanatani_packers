@@ -27,18 +27,15 @@ $route["office-shifting-in-(:any)"] = "city_services/office_shifting/$1";
 $route["car-transport-in-(:any)"] = "city_services/car_transport/$1";
 $route["bike-transport-in-(:any)"] = "city_services/bike_transport/$1";
 
-// Services Routes
+// Services Routes (6 Core Services)
 $route["our-services"] = "services/index";
-$route["home-relocation"] = "services/homeShifting";
-$route["office-relocation"] = "services/office";
-$route["bike-transportation"] = "services/bike";
-$route["car-transportation"] = "services/car";
-$route["packing-and-moving"] = "services/packingMoving";
-$route["loading-unloading"] = "services/loadingUnloading";
+$route["packers-and-movers"] = "services/packersMovers";
+$route["household-shifting"] = "services/householdShifting";
+$route["office-relocation"] = "services/officeRelocation";
+$route["local-and-domestic-moving"] = "services/localDomesticMoving";
+$route["transportation-services"] = "services/transportation";
+$route["goods-and-logistics"] = "services/goodsLogistics";
 
-// Legacy/Compatibility Routes
-$route["storage-services"] = "services/storage";
-$route["car-transportation-service"] = "services/car";
 $route["infrastructure"] = "about/infrastructure";
 $route["why-choose-us"] = "about/choose";
 

@@ -4,16 +4,16 @@ class Packers_movers extends MX_Controller
 
     function index()
     {
-        $data['title'] = "All India Service " . $this->comp['company3'];
-        $data['description'] = $this->comp['company3'] . " is best packers and movers service provider.";
+        $data['title'] = "All India Packers and Movers Network | " . $this->comp['company3'];
+        $data['description'] = "Pan-India packing and moving services by " . $this->comp['company3'] . ". Explore state-wise & city-wise relocation, car carrier, and household shifting solutions.";
         $data['module'] = "packers_movers";
         $data['view_file'] = "states";
         echo Modules::run('template/layout2', $data);
     }
     function state()
     {
-        $data['title'] = "All India Service " . $this->comp['company3'];
-        $data['description'] = $this->comp['company3'] . " is best packers and movers service provider.";
+        $data['title'] = "All India Packers and Movers Network | " . $this->comp['company3'];
+        $data['description'] = "Pan-India packing and moving services by " . $this->comp['company3'] . ". Explore state-wise & city-wise relocation, car carrier, and household shifting solutions.";
         $data['module'] = "packers_movers";
         $data['view_file'] = "states";
         echo Modules::run('template/layout2', $data);
@@ -27,9 +27,9 @@ class Packers_movers extends MX_Controller
         $state = ucwords(str_replace("-", " ", $state));
         $data = array(
             "state" => $state,
-            "title" => $this->comp['company3'] . " in $state",
-            "description" => $this->comp['company3'] . " in $state",
-            "keywords" => "$state " . $this->comp['company3'] . " in $state",
+            "title" => "Best Packers and Movers in $state | " . $this->comp['company3'],
+            "description" => "Top-rated packers and movers services in $state by " . $this->comp['company3'] . ". Professional home shifting, office relocation, and vehicle transport across $state.",
+            "keywords" => "packers and movers in $state, house shifting $state, vehicle transport $state, " . $this->comp['company3'],
             "module" => "packers_movers",
             "view_file" => "city_list",
         );
@@ -48,10 +48,9 @@ class Packers_movers extends MX_Controller
                 return $s;
             }
         }
-        //edit by Arshad 15-11-2024
         return array(
             'title' => "Best Packers and Movers in $city, $state | " . $this->comp['company3'],
-            "desc" => "Hire top-rated packers and movers in $city, $state. " . $this->comp['company3'] . " offers reliable household shifting and vehicle transport services at affordable rates."
+            "desc" => "Hire top-rated packers and movers in $city, $state. " . $this->comp['company3'] . " offers reliable household shifting, office relocation, and vehicle transport at affordable rates."
         );
     }
     function city($state = 'Bihar', $city = 'Patna')

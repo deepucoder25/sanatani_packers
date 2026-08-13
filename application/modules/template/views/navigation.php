@@ -13,7 +13,7 @@
     $active_tab = 'home';
   } elseif ($class === 'about' || in_array($segment1, ['about-us', 'why-choose-us', 'faqs', 'testimonials'])) {
     $active_tab = 'about';
-  } elseif ($class === 'services' || in_array($segment1, ['our-services', 'home-shifting', 'office-relocation', 'car-transportation', 'bike-transportation', 'warehouse-and-storage', 'domestic-relocation', 'international-shifting', 'corporate-shifting', 'intercity-shifting', 'local-shifting', 'logistic-services', 'pet-relocation', 'home-relocation', 'storage-services', 'car-transportation-service'])) {
+  } elseif ($class === 'services' || in_array($segment1, ['our-services', 'packers-and-movers', 'household-shifting', 'office-relocation', 'local-and-domestic-moving', 'transportation-services', 'goods-and-logistics'])) {
     $active_tab = 'services';
   } elseif ($class === 'packers_movers' || $segment1 === 'our-branches') {
     $active_tab = 'locations';
@@ -142,18 +142,18 @@
             class="nav-link dropdown-toggle<?= $active_tab === 'services' ? ' active' : '' ?>">Services <i
               class="bi bi-chevron-down ms-1"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item<?= $segment1 === 'home-relocation' ? ' active' : '' ?>"
-                href="<?= site_url('home-relocation') ?>">Home Relocation</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'packers-and-movers' ? ' active' : '' ?>"
+                href="<?= site_url('packers-and-movers') ?>">Packers &amp; Movers</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'household-shifting' ? ' active' : '' ?>"
+                href="<?= site_url('household-shifting') ?>">Household Shifting</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'office-relocation' ? ' active' : '' ?>"
                 href="<?= site_url('office-relocation') ?>">Office Relocation</a></li>
-            <li><a class="dropdown-item<?= $segment1 === 'car-transportation' ? ' active' : '' ?>"
-                href="<?= site_url('car-transportation') ?>">Car Transportation</a></li>
-            <li><a class="dropdown-item<?= $segment1 === 'bike-transportation' ? ' active' : '' ?>"
-                href="<?= site_url('bike-transportation') ?>">Bike Transportation</a></li>
-            <li><a class="dropdown-item<?= $segment1 === 'packing-and-moving' ? ' active' : '' ?>"
-                href="<?= site_url('packing-and-moving') ?>">Packing &amp; Moving Service</a></li>
-            <li><a class="dropdown-item<?= $segment1 === 'loading-unloading' ? ' active' : '' ?>"
-                href="<?= site_url('loading-unloading') ?>">Loading Unloading Service</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'local-and-domestic-moving' ? ' active' : '' ?>"
+                href="<?= site_url('local-and-domestic-moving') ?>">Local &amp; Domestic Moving</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'transportation-services' ? ' active' : '' ?>"
+                href="<?= site_url('transportation-services') ?>">Transportation</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'goods-and-logistics' ? ' active' : '' ?>"
+                href="<?= site_url('goods-and-logistics') ?>">Goods &amp; Logistics</a></li>
           </ul>
         </div>
         <a href="<?= site_url('our-branches') ?>"
@@ -218,18 +218,18 @@
             <i class="bi bi-chevron-down toggle-icon"></i>
           </button>
           <div class="mobile-dropdown-menu">
-            <a href="<?= site_url('home-relocation') ?>"
-              class="<?= $segment1 === 'home-relocation' ? 'active' : '' ?>">Home Relocation</a>
+            <a href="<?= site_url('packers-and-movers') ?>"
+              class="<?= $segment1 === 'packers-and-movers' ? 'active' : '' ?>">Packers &amp; Movers</a>
+            <a href="<?= site_url('household-shifting') ?>"
+              class="<?= $segment1 === 'household-shifting' ? 'active' : '' ?>">Household Shifting</a>
             <a href="<?= site_url('office-relocation') ?>"
               class="<?= $segment1 === 'office-relocation' ? 'active' : '' ?>">Office Relocation</a>
-            <a href="<?= site_url('car-transportation') ?>"
-              class="<?= $segment1 === 'car-transportation' ? 'active' : '' ?>">Car Transportation</a>
-            <a href="<?= site_url('bike-transportation') ?>"
-              class="<?= $segment1 === 'bike-transportation' ? 'active' : '' ?>">Bike Transportation</a>
-            <a href="<?= site_url('packing-and-moving') ?>"
-              class="<?= $segment1 === 'packing-and-moving' ? 'active' : '' ?>">Packing &amp; Moving Service</a>
-            <a href="<?= site_url('loading-unloading') ?>"
-              class="<?= $segment1 === 'loading-unloading' ? 'active' : '' ?>">Loading Unloading Service</a>
+            <a href="<?= site_url('local-and-domestic-moving') ?>"
+              class="<?= $segment1 === 'local-and-domestic-moving' ? 'active' : '' ?>">Local &amp; Domestic Moving</a>
+            <a href="<?= site_url('transportation-services') ?>"
+              class="<?= $segment1 === 'transportation-services' ? 'active' : '' ?>">Transportation</a>
+            <a href="<?= site_url('goods-and-logistics') ?>"
+              class="<?= $segment1 === 'goods-and-logistics' ? 'active' : '' ?>">Goods &amp; Logistics</a>
           </div>
         </div>
 

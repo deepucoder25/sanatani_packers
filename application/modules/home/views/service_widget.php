@@ -2,88 +2,46 @@
 
 $services = [
     [
-        'title_part1' => 'Home',
+        'title_part1' => 'Packers &',
+        'title_part2' => 'Movers',
+        'image' => 'home-shifting-services.webp',
+        'desc' => 'Professional packing and moving services across India. Door-to-door shifting, expert packing materials, and safe delivery.',
+        'link' => 'packers-and-movers'
+    ],
+    [
+        'title_part1' => 'Household',
         'title_part2' => 'Shifting',
         'image' => 'home-shifting-services.webp',
-        'desc' => 'Professional home shifting services to carefully transport all your household belongings with care and precision.',
-        'link' => 'home-shifting'
+        'desc' => 'Hassle-free household shifting services. Safe packing of home items, damage-free transport, and unpacking at your new home.',
+        'link' => 'household-shifting'
     ],
     [
         'title_part1' => 'Office',
         'title_part2' => 'Relocation',
         'image' => 'office-relocation-services.webp',
-        'desc' => 'Seamless office relocation services designed to minimize disruption and ensure a smooth business transition.',
+        'desc' => 'Seamless office relocation services designed to minimize disruption and ensure smooth business transitions.',
         'link' => 'office-relocation'
     ],
     [
-        'title_part1' => 'Car',
-        'title_part2' => 'Transportation',
-        'image' => 'car-transportation-services.webp',
-        'desc' => 'Safe and reliable car transportation services to ensure your vehicle reaches its destination without hassle.',
-        'link' => 'car-transportation'
-    ],
-    [
-        'title_part1' => 'Bike',
-        'title_part2' => 'Transportation',
-        'image' => 'bike-transportation-services.webp',
-        'desc' => 'Efficient bike transportation services tailored to ensure your bike reaches its destination safely and on time.',
-        'link' => 'bike-transportation'
-    ],
-    [
-        'title_part1' => 'Warehouse',
-        'title_part2' => '& Storage',
-        'image' => 'warehouse-storage-services.webp',
-        'desc' => 'Safe and spacious warehouse and storage solutions to store your goods for short or long-term durations.',
-        'link' => 'warehouse-and-storage'
-    ],
-    [
-        'title_part1' => 'Domestic',
-        'title_part2' => 'Relocation',
+        'title_part1' => 'Local & Domestic',
+        'title_part2' => 'Moving',
         'image' => 'domestic-relocation-services.webp',
-        'desc' => 'Comprehensive domestic relocation services to make moving within the country seamless and stress-free.',
-        'link' => 'domestic-relocation'
+        'desc' => 'Reliable local and intercity domestic moving services for quick, safe, and stress-free relocation nationwide.',
+        'link' => 'local-and-domestic-moving'
     ],
     [
-        'title_part1' => 'International',
-        'title_part2' => 'Shifting',
-        'image' => 'international-shifting-services.webp',
-        'desc' => 'Expert international shifting services for smooth and stress-free cross-border relocations worldwide.',
-        'link' => 'international-shifting'
-    ],
-    [
-        'title_part1' => 'Corporate',
-        'title_part2' => 'Shifting',
-        'image' => 'corporate-shifting-services.webp',
-        'desc' => 'Efficient corporate shifting solutions designed to minimize downtime and ensure smooth business transitions.',
-        'link' => 'corporate-shifting'
-    ],
-    [
-        'title_part1' => 'Intercity',
-        'title_part2' => 'Shifting',
-        'image' => 'intercity-shifting-services.webp',
-        'desc' => 'Reliable intercity shifting services to move your goods securely between different cities with ease.',
-        'link' => 'intercity-shifting'
-    ],
-    [
-        'title_part1' => 'Local',
-        'title_part2' => 'Shifting',
-        'image' => 'local-shifting-services.webp',
-        'desc' => 'Quick and efficient local shifting services to transport your belongings within the city, hassle-free.',
-        'link' => 'local-shifting'
-    ],
-    [
-        'title_part1' => 'Logistic',
+        'title_part1' => 'Transportation',
         'title_part2' => 'Services',
-        'image' => 'logistic-services.webp',
-        'desc' => 'Comprehensive logistic services to handle all your transportation and supply chain needs with efficiency.',
-        'link' => 'logistic-services'
+        'image' => 'car-transportation-services.webp',
+        'desc' => 'Secure car, bike, and vehicle transportation services with specialized carriers, GPS tracking, and insurance cover.',
+        'link' => 'transportation-services'
     ],
     [
-        'title_part1' => 'Pet',
-        'title_part2' => 'Relocation',
-        'image' => 'pet-relocation-services.webp',
-        'desc' => 'Caring and secure pet relocation services to ensure your pets travel comfortably and safely to any destination.',
-        'link' => 'pet-relocation'
+        'title_part1' => 'Goods &',
+        'title_part2' => 'Logistics',
+        'image' => 'logistic-services.webp',
+        'desc' => 'Comprehensive goods transport, cargo handling, and logistics solutions tailored for commercial and individual needs.',
+        'link' => 'goods-and-logistics'
     ],
 ];
 ?>

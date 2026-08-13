@@ -7,8 +7,8 @@ class Tracking extends MX_Controller {
     }
 
     public function index() {
-        $data['title'] = "Track Your Shipment | Get Real-Time Shipping Updates";
-        $data['description'] = "Track shipment with tracking number or LR number. Get real-time updates of your household shifting, cargo, or vehicle transportation. Get instant tracking with accurate status";
+        $data['title'] = "Track Shipment Online - Real-Time Status | " . $this->comp['company3'];
+        $data['description'] = "Track your household shifting, vehicle carrier, or cargo shipment online with " . $this->comp['company3'] . ". Enter your tracking ID or LR number for instant status updates.";
         $data['module'] = "tracking";
         $data['view_file'] = "tracking";
         echo Modules::run('template/layout2', $data);
