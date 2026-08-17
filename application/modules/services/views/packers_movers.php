@@ -3,7 +3,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Packers & Movers',
-    'bc_desc' => 'Professional Packing & Moving Services Across India',
+    'bc_desc' => "India's premier IBA approved packers & movers providing 5-layer protective packing, zero-damage home relocation, trained staff & GPS tracked transport across India.",
     'breadcrumbs' => [
         ['name' => 'Packers & Movers']
     ]

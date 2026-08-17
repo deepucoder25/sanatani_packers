@@ -3,7 +3,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Transportation Services',
-    'bc_desc' => 'Secure Car, Bike & Automobile Transport',
+    'bc_desc' => "Safe car and bike transportation services utilizing specialized enclosed car carriers, scratch-free hydraulic loading & full transit insurance coverage.",
     'breadcrumbs' => [
         ['name' => 'Transportation Services']
     ]

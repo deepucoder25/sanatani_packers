@@ -3,7 +3,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Local & Domestic Moving',
-    'bc_desc' => 'Hassle-Free Local & Intercity Domestic Relocation',
+    'bc_desc' => "Reliable local home shifting and long-distance intercity domestic moving solutions with dedicated enclosed vehicles, real-time tracking & affordable rates.",
     'breadcrumbs' => [
         ['name' => 'Local & Domestic Moving']
     ]

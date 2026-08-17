@@ -3,7 +3,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Goods & Logistics',
-    'bc_desc' => 'Comprehensive Goods Shipping & Cargo Logistics',
+    'bc_desc' => "Comprehensive commercial goods transport, industrial freight shipping, warehouse storage & end-to-end logistics management across India.",
     'breadcrumbs' => [
         ['name' => 'Goods & Logistics']
     ]

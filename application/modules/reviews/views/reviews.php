@@ -1,8 +1,8 @@
 <main class="main">
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Our Reviews',
-    'bc_desc' => 'Read what our customers have to say',
+    'bc_h1' => 'Customer Reviews & Feedback',
+    'bc_desc' => "Read verified customer reviews, ratings & feedback from families and businesses across India who trusted $company3 for safe shifting.",
     'breadcrumbs' => [
         ['name' => 'Reviews']
     ]

@@ -3,10 +3,9 @@
 <!-- Breadcrumbs Section -->
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Office Relocation in',
-    'bc_title_orange' => '',
-    'bc_desc' => ''
+    'bc_current' => isset($city) ? "Office Relocation in $city" : 'Office Relocation',
+    'bc_h1' => isset($city) ? "Office Relocation Services in $city" : 'Office Relocation Services',
+    'bc_desc' => "Fast & efficient office relocation services engineered for zero business downtime, IT equipment packing & safe intercity commercial moving."
 ]); 
 ?>
 

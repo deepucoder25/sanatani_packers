@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Privacy Policy',
-    'bc_desc' => "Privacy Policy",
+    'bc_desc' => "Read our privacy policy to understand how $company3 protects your personal information and ensures 100% secure relocation booking.",
     'breadcrumbs' => [
         ['name' => 'Privacy Policy']
     ]

@@ -3,10 +3,9 @@
 <!-- Breadcrumbs Section -->
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Car Transportation in',
-    'bc_title_orange' => '',
-    'bc_desc' => ''
+    'bc_current' => isset($city) ? "Car Transportation in $city" : 'Car Transportation',
+    'bc_h1' => isset($city) ? "Car Transportation Services in $city" : 'Car Transportation Services',
+    'bc_desc' => "Safe car transportation using specialized enclosed car carriers, scratch-free hydraulic loading & full transit insurance coverage across India."
 ]); 
 ?>
 

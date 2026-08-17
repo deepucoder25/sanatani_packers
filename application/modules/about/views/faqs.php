@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Frequently Asked Questions',
-    'bc_desc' => "Frequently Asked Questions",
+    'bc_desc' => "Find answers to frequently asked questions regarding packing materials, shifting costs, transit insurance, and relocation timelines.",
     'breadcrumbs' => [
         ['name' => 'Frequently Asked Questions']
     ]

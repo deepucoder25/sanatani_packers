@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'About Us',
-    'bc_desc' => '',
+    'bc_desc' => "Learn about $company3 — India's trusted IBA approved & ISO certified packers and movers delivering 100% safe, zero-damage relocation services.",
     'breadcrumbs' => [
         ['name' => 'About Us']
     ]

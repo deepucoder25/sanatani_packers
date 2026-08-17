@@ -4,9 +4,8 @@
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
     'bc_current' => 'Photo Gallery',
-    'bc_title_white' => 'Photo',
-    'bc_title_orange' => 'Gallery',
-    'bc_desc' => 'Explore visual highlights of our cargo handling, warehouse storage, specialized container fleets, and global logistics operations.'
+    'bc_h1' => 'Photo Gallery',
+    'bc_desc' => 'Explore visual highlights of our multi-layer protective packing, enclosed car carriers, warehouse storage & expert relocation team in action.'
 ]); 
 ?>
 

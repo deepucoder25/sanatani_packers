@@ -4,10 +4,9 @@
     <!-- Breadcrumbs Section -->
     <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Blog',
-    'bc_title_orange' => 'Details',
-    'bc_desc' => ''
+    'bc_current' => isset($post['title']) ? $post['title'] : 'Blog Details',
+    'bc_h1' => isset($post['title']) ? $post['title'] : 'Blog Details',
+    'bc_desc' => 'Read in-depth relocation insights, step-by-step moving checklists, packing safety tips & expert industry advice.'
 ]); 
 ?>
 

@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Contact Us',
-    'bc_desc' => 'Contact Us',
+    'bc_desc' => "Get in touch with $company3 for instant moving quotes, 24/7 customer support, branch office locations & expert relocation advice.",
     'breadcrumbs' => [
         ['name' => 'Contact Us']
     ]

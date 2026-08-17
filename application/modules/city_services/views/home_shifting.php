@@ -3,10 +3,9 @@
 <!-- Breadcrumbs Section -->
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Home Shifting in',
-    'bc_title_orange' => '',
-    'bc_desc' => ''
+    'bc_current' => isset($city) ? "Home Shifting in $city" : 'Home Shifting',
+    'bc_h1' => isset($city) ? "Home Shifting Services in $city" : 'Home Shifting Services',
+    'bc_desc' => "Professional household shifting services with 5-layer protective packing, safe furniture loading, real-time GPS tracking & guaranteed zero-damage transit."
 ]); 
 ?>
 

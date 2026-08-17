@@ -3,10 +3,9 @@
 <!-- Breadcrumbs Section -->
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Bike Transportation in',
-    'bc_title_orange' => '',
-    'bc_desc' => ''
+    'bc_current' => isset($city) ? "Bike Transportation in $city" : 'Bike Transportation',
+    'bc_h1' => isset($city) ? "Bike Transportation Services in $city" : 'Bike Transportation Services',
+    'bc_desc' => "Door-to-door bike transport services with customized bubble wrapping, secure wheel locking & instant tracking at affordable prices."
 ]); 
 ?>
 

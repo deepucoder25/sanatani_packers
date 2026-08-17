@@ -4,9 +4,8 @@
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
     'bc_current' => 'Video Gallery',
-    'bc_title_white' => 'Video',
-    'bc_title_orange' => 'Gallery',
-    'bc_desc' => 'Watch our step-by-step cargo handling processes, transport safety standards, and global freight forwarding in action.'
+    'bc_h1' => 'Video Gallery',
+    'bc_desc' => 'Watch live video demonstrations of our zero-damage packing techniques, heavy furniture handling, vehicle transport & shifting operations.'
 ]); 
 ?>
 

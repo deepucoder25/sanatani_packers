@@ -1,20 +1,11 @@
 <!-- Breadcrumbs Section -->
-<section class="service-breadcrumbs">
-  <div class="container">
-    <nav class="bc-nav">
-      <a href="<?= site_url() ?>">Home</a>
-      <span class="bc-sep">›</span>
-      <span class="bc-current">Track Your Consignment</span>
-    </nav>
-    <h1><span class="bc-title-white">Track Your</span> <span class="bc-title-orange">Consignment</span></h1>
-    <p class="bc-desc">Get real-time updates and accurate status of your shipment.</p>
-  </div>
-  <div class="bc-wave-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 64" preserveAspectRatio="none">
-      <path d="M0,30 C480,64 960,0 1440,30 L1440,64 L0,64 Z" fill="#ffffff" />
-    </svg>
-  </div>
-</section>
+<?php 
+$this->load->view('about/dynamic_breadcrumbs', [
+    'bc_current' => 'Track Consignment',
+    'bc_h1' => 'Track Your Consignment',
+    'bc_desc' => 'Track your shipment in real-time with live GPS location updates, consignment status & estimated delivery timelines across India.'
+]); 
+?>
 <div class="container py-5">
     <div class="row">
         <!-- Center Column for Premium Design -->

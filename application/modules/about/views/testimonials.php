@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Testimonials',
-    'bc_desc' => "Testimonials $company3",
+    'bc_desc' => "Read authentic client reviews and testimonials from families & businesses who experienced zero-damage moving with $company3.",
     'breadcrumbs' => [
         ['name' => 'Testimonials']
     ]

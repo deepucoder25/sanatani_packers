@@ -4,7 +4,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Why Choose Us',
-    'bc_desc' => "Why Choose $company3",
+    'bc_desc' => "Discover why thousands choose $company3 for hassle-free home shifting, 5-layer protective packing, expert handlers & transparent pricing.",
     'breadcrumbs' => [
         ['name' => 'Why Choose Us']
     ]

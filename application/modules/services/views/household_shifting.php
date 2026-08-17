@@ -3,7 +3,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Household Shifting',
-    'bc_desc' => 'Safe & Reliable Home Shifting Services',
+    'bc_desc' => "Stress-free household shifting with expert multi-layer bubble wrapping, safe furniture dismantling & loading, transit insurance, and timely door-to-door delivery.",
     'breadcrumbs' => [
         ['name' => 'Household Shifting']
     ]

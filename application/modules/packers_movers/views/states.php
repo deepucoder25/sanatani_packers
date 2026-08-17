@@ -1,7 +1,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Our Branches',
-    'bc_desc' => '',
+    'bc_h1' => 'Our Nationwide Branch Network',
+    'bc_desc' => "Explore our nationwide branch network of IBA approved packers and movers providing verified local & domestic shifting services across India.",
     'breadcrumbs' => [
         ['name' => 'Our Branches']
     ]
