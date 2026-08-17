@@ -1,9 +1,9 @@
 /* --- Home Page Hero & Slider Section Styles --- */
 .home-page-hero {
     position: relative;
-    padding-top: 35px !important;
-    padding-bottom: 35px !important;
-    background: linear-gradient(135deg, #FAFDFD 0%, #F5F8FC 40%, #EBF1F9 100%) !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    background: #FAFDFD url('../images/slider/slider.jpg') no-repeat right center / cover !important;
     overflow: hidden;
     color: var(--text-dark, #0F172A) !important;
 }
@@ -13,10 +13,6 @@
     z-index: 2;
 }
 
-.hero-top-row {
-    min-height: 440px;
-}
-
 /* 1. Left Content Column */
 .hero-left-col {
     padding-top: 10px;
@@ -24,7 +20,6 @@
 }
 
 .hero-eyebrow-tag {
-    font-family: 'Outfit', sans-serif !important;
     font-size: 13.5px !important;
     font-weight: 800 !important;
     letter-spacing: 1.5px !important;
@@ -47,14 +42,14 @@
 }
 
 .hero-main-title {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 48px !important;
+    font-size: 38px !important;
     font-weight: 900 !important;
-    line-height: 1.12 !important;
+    line-height: 1.15 !important;
     color: var(--primary-color, #0B2654) !important;
     margin-bottom: 12px !important;
     letter-spacing: -0.5px !important;
     text-transform: uppercase !important;
+    white-space: nowrap !important;
 }
 
 .hero-main-title .highlight-orange {
@@ -62,7 +57,6 @@
 }
 
 .hero-subline-divider {
-    font-family: 'Outfit', sans-serif !important;
     font-size: 14.5px !important;
     font-weight: 700 !important;
     color: var(--primary-color, #0B2654) !important;
@@ -78,7 +72,6 @@
 }
 
 .hero-description {
-    font-family: 'Outfit', sans-serif !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
     color: var(--text-muted, #475569) !important;
@@ -90,29 +83,30 @@
 .hero-features-row {
     display: flex !important;
     align-items: center !important;
-    gap: 18px !important;
+    gap: 12px !important;
     margin-bottom: 28px !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
 }
 
 .hero-feature-item {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
 }
 
 .feature-icon-circle {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
     border-radius: 50% !important;
     background: #ffffff !important;
     border: 1.5px solid rgba(255, 134, 35, 0.35) !important;
     color: var(--secondary-color, #FF8623) !important;
     display: grid !important;
     place-items: center !important;
-    font-size: 18px !important;
+    font-size: 17px !important;
     box-shadow: 0 4px 12px rgba(255, 134, 35, 0.12) !important;
     transition: all 0.3s ease !important;
 }
@@ -125,11 +119,11 @@
 }
 
 .feature-label {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 13px !important;
+    font-size: 12.5px !important;
     font-weight: 700 !important;
     color: var(--primary-color, #0B2654) !important;
     line-height: 1.2 !important;
+    white-space: nowrap !important;
 }
 
 /* Action Buttons */
@@ -137,13 +131,12 @@
     display: flex !important;
     align-items: center !important;
     gap: 16px !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
 }
 
 .btn-hero-primary {
     background: linear-gradient(135deg, var(--secondary-color, #FF8623) 0%, #E66A00 100%) !important;
     color: #ffffff !important;
-    font-family: 'Outfit', sans-serif !important;
     font-size: 14px !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
@@ -191,7 +184,6 @@
 .btn-hero-secondary {
     background: #ffffff !important;
     color: var(--primary-color, #0B2654) !important;
-    font-family: 'Outfit', sans-serif !important;
     font-size: 14px !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
@@ -226,154 +218,122 @@
     transform: translateX(4px) !important;
 }
 
-/* 2. Right Truck Hero Image */
-.hero-right-col {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* 2. Right Truck Hero Image Spacer (Desktop Only) */
+@media (min-width: 992px) {
+    .hero-right-col {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 380px !important;
+    }
 }
 
-.hero-truck-image-wrapper {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 600px !important;
+/* 3. Quote Form Card Section (Loaded from quoteform.php) */
+.hero-quote-card-container {
+    background: linear-gradient(135deg, rgba(7, 28, 63, 0.94) 0%, rgba(11, 38, 84, 0.94) 100%) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border-radius: 20px !important;
-    overflow: hidden !important;
-    box-shadow: 0 15px 40px rgba(11, 38, 84, 0.14) !important;
-    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
-}
-
-.hero-truck-image-wrapper:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 22px 50px rgba(11, 38, 84, 0.2) !important;
-}
-
-.hero-truck-img {
-    width: 100% !important;
-    max-height: 420px !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: cover !important;
-}
-
-/* 3. Bottom Horizontal Quote Form Bar (Loaded from quoteform.php) */
-.hero-quote-bar-container {
-    background: linear-gradient(135deg, #071C3F 0%, var(--primary-color, #0B2654) 50%, #051530 100%) !important;
-    border-radius: 20px !important;
-    padding: 16px 24px !important;
-    box-shadow: 0 20px 45px rgba(11, 38, 84, 0.28) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 18px 22px 14px !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
     margin-top: 10px !important;
 }
 
-.quote-bar-inner {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 18px !important;
+.quote-card-top-bar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding-bottom: 12px !important;
 }
 
-/* Left Title */
-.quote-bar-title-box {
-    display: flex !important;
-    flex-direction: column !important;
-    min-width: 165px !important;
-}
-
-.quote-title-small {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 11.5px !important;
+.quote-card-badge {
+    background: rgba(255, 134, 35, 0.25) !important;
+    color: var(--secondary-color, #FF8623) !important;
+    font-size: 11px !important;
     font-weight: 800 !important;
-    color: #ffffff !important;
-    letter-spacing: 1.5px !important;
-    text-transform: uppercase !important;
-    opacity: 0.9 !important;
-    line-height: 1.2 !important;
-}
-
-.quote-title-large {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 20px !important;
-    font-weight: 900 !important;
-    color: #ffffff !important;
-    text-transform: uppercase !important;
-    margin: 0 !important;
-    line-height: 1.15 !important;
-    letter-spacing: 0.3px !important;
-}
-
-.quote-title-large .orange-highlight {
-    color: var(--secondary-color, #FF8623) !important;
-}
-
-/* Inputs Wrap */
-.quote-bar-inputs-wrap {
-    display: flex !important;
-    flex-direction: row !important;
+    letter-spacing: 0.5px !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 134, 35, 0.45) !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
     align-items: center !important;
-    gap: 12px !important;
-    flex: 1 !important;
-}
-
-.quote-input-box {
-    background: #ffffff !important;
-    border-radius: 10px !important;
-    height: 48px !important;
-    padding: 0 14px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    flex: 1 !important;
-    min-width: 0 !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
-    border: 1px solid transparent !important;
-    transition: all 0.25s ease !important;
-}
-
-.quote-input-box:focus-within {
-    border-color: var(--secondary-color, #FF8623) !important;
-    box-shadow: 0 0 0 3px rgba(255, 134, 35, 0.2) !important;
-}
-
-.quote-input-icon {
-    color: var(--secondary-color, #FF8623) !important;
-    font-size: 17px !important;
+    gap: 4px !important;
     flex-shrink: 0 !important;
 }
 
-.quote-input-field {
+.quote-card-main-title {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.25 !important;
+}
+
+.quote-card-subtext {
+    font-size: 12.5px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500 !important;
+}
+
+.input-wrap-custom {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    border: 1.5px solid transparent !important;
+    border-radius: 12px !important;
+    height: 48px !important;
+    padding: 0 14px !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06) !important;
+    min-width: 0 !important;
+}
+
+.input-wrap-custom:focus-within {
+    border-color: var(--secondary-color, #FF8623) !important;
+    box-shadow: 0 0 0 3px rgba(255, 134, 35, 0.25) !important;
+}
+
+.input-icon-custom {
+    color: var(--secondary-color, #FF8623) !important;
+    font-size: 17px !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
+}
+
+.form-control-custom {
     border: none !important;
     outline: none !important;
-    font-family: 'Outfit', sans-serif !important;
+    background: transparent !important;
+    width: 100% !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
     color: #0F172A !important;
-    width: 100% !important;
-    background: transparent !important;
+    padding: 0 !important;
 }
 
-.quote-input-field::placeholder {
+.form-control-custom::placeholder {
     color: #64748B !important;
     font-weight: 500 !important;
 }
 
-.quote-select-box {
+.select-wrap-custom {
     position: relative !important;
 }
 
-.quote-select-field {
+.form-select-custom {
     border: none !important;
     outline: none !important;
-    font-family: 'Outfit', sans-serif !important;
+    background: transparent !important;
+    width: 100% !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
     color: #0F172A !important;
-    width: 100% !important;
-    background: transparent !important;
+    cursor: pointer !important;
+    padding: 0 !important;
     appearance: none !important;
     -webkit-appearance: none !important;
-    cursor: pointer !important;
-    padding-right: 20px !important;
 }
 
 .select-caret-icon {
@@ -384,52 +344,32 @@
     pointer-events: none !important;
 }
 
-.quote-submit-btn {
+.btn-submit-custom {
     background: linear-gradient(135deg, var(--secondary-color, #FF8623) 0%, #E66A00 100%) !important;
-    border: none !important;
     color: #ffffff !important;
-    font-family: 'Outfit', sans-serif !important;
+    border: none !important;
+    border-radius: 12px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
     font-size: 13.5px !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
-    height: 48px !important;
-    padding: 0 22px !important;
-    border-radius: 10px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
-    cursor: pointer !important;
+    gap: 8px !important;
+    box-shadow: 0 8px 24px rgba(255, 134, 35, 0.4) !important;
     transition: all 0.3s ease !important;
+    cursor: pointer !important;
     white-space: nowrap !important;
-    box-shadow: 0 6px 20px rgba(255, 134, 35, 0.4) !important;
 }
 
-.quote-submit-btn:hover {
-    background: linear-gradient(135deg, #0B2654 0%, #153C7D 100%) !important;
-    box-shadow: 0 8px 25px rgba(11, 38, 84, 0.4) !important;
+.btn-submit-custom:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #F1F5F9 100%) !important;
+    color: var(--primary-color, #0B2654) !important;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3) !important;
     transform: translateY(-2px) !important;
-}
-
-.quote-submit-btn .submit-arrow-circle {
-    width: 24px !important;
-    height: 24px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.25) !important;
-    display: grid !important;
-    place-items: center !important;
-    font-size: 12px !important;
-    transition: transform 0.3s ease !important;
-}
-
-.quote-submit-btn:hover .submit-arrow-circle {
-    background: var(--secondary-color, #FF8623) !important;
-    transform: translateX(3px) !important;
-}
-
-.quote-form-results-box {
-    width: 100% !important;
 }
 
 /* --- Responsive Media Queries --- */
@@ -441,108 +381,148 @@
     .hero-features-row {
         gap: 14px !important;
     }
-
-    .quote-bar-inner {
-        gap: 14px !important;
-    }
 }
 
 @media (max-width: 991.98px) {
     .home-page-hero {
-        padding-top: 25px !important;
-        padding-bottom: 35px !important;
+        padding-top: 20px !important;
+        padding-bottom: 25px !important;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.70) 50%, rgba(255, 255, 255, 0.35) 100%), url('../images/slider/slider.jpg') no-repeat center center / cover !important;
     }
 
     .hero-left-col {
         text-align: left !important;
-        margin-bottom: 25px !important;
+        margin-bottom: 10px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hero-right-col {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .hero-main-title {
-        font-size: 34px !important;
+        font-size: 30px !important;
+        white-space: normal !important;
+        margin-bottom: 8px !important;
+    }
+
+    .hero-eyebrow-tag {
+        margin-bottom: 6px !important;
+    }
+
+    .hero-subline-divider {
+        margin-bottom: 8px !important;
     }
 
     .hero-description {
         max-width: 100% !important;
-        font-size: 14px !important;
+        font-size: 13.5px !important;
+        margin-bottom: 14px !important;
     }
 
     .hero-features-row {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-    }
-
-    .quote-bar-inner {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 14px !important;
-    }
-
-    .quote-bar-title-box {
-        text-align: center !important;
-        align-items: center !important;
-    }
-
-    .quote-bar-inputs-wrap {
-        flex-direction: column !important;
-        width: 100% !important;
         gap: 10px !important;
+        margin-bottom: 16px !important;
     }
 
-    .quote-input-box {
-        width: 100% !important;
-        height: 46px !important;
-    }
-
-    .quote-submit-btn {
+    .btn-submit-custom {
         width: 100% !important;
         height: 46px !important;
     }
 }
 
+@media (max-width: 767.98px) {
+    .home-page-hero {
+        padding-top: 15px !important;
+        padding-bottom: 20px !important;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.70) 40%, rgba(255, 255, 255, 0.50) 100%), url('../images/slider/mobile_slider.jpg') no-repeat center center / cover !important;
+    }
+}
+
 @media (max-width: 575.98px) {
+    .home-page-hero {
+        padding-top: 12px !important;
+        padding-bottom: 16px !important;
+    }
+
     .hero-main-title {
-        font-size: 28px !important;
+        font-size: 26px !important;
+        margin-bottom: 6px !important;
     }
 
     .hero-eyebrow-tag {
-        font-size: 12px !important;
+        font-size: 11.5px !important;
+        margin-bottom: 4px !important;
     }
 
     .hero-subline-divider {
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .hero-description {
         font-size: 13px !important;
+        margin-bottom: 10px !important;
+        line-height: 1.45 !important;
     }
 
     .hero-features-row {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
     }
 
     .feature-icon-circle {
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        min-height: 38px !important;
-        font-size: 16px !important;
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        min-height: 34px !important;
+        font-size: 14px !important;
     }
 
     .feature-label {
-        font-size: 12px !important;
+        font-size: 11.5px !important;
     }
 
     .hero-actions-row {
-        flex-direction: column !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         width: 100% !important;
+        gap: 8px !important;
     }
 
     .btn-hero-primary,
     .btn-hero-secondary {
-        width: 100% !important;
+        flex: 1 !important;
+        width: auto !important;
+        padding: 9px 6px !important;
+        font-size: 11.5px !important;
         justify-content: center !important;
+        white-space: nowrap !important;
     }
 
-    .hero-quote-bar-container {
-        padding: 14px !important;
+    .btn-submit-custom {
+        width: 100% !important;
+    }
+
+    .hero-quote-card-container {
+        margin-top: 5px !important;
+        padding: 12px 14px 10px !important;
+    }
+
+    .quote-card-main-title {
+        font-size: 15px !important;
+    }
+
+    .quote-card-badge {
+        font-size: 10px !important;
+        padding: 3px 8px !important;
     }
 }
