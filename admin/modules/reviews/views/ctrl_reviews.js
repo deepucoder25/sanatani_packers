@@ -12,6 +12,13 @@ app.controller('ctrl_reviews',function($scope,$http){
 			messages("success", "Success!","Review Updated Successfully", 3000);
 		})
 	}
+	$scope.toggleStatus=function(r){
+		var newStatus = (r.st=='1' || r.st==1) ? '0' : '1';
+		$http.get("reviews/save?id="+r.r_id+"&status="+newStatus).success(function(data){
+			r.st = newStatus;
+			messages("success", "Success!", (newStatus=='0' ? "Review Hidden Successfully" : "Review Shown Successfully"), 3000);
+		});
+	}
 	$scope.openEdit=function(r){
 		$scope.editForm={
 			r_id: r.r_id,

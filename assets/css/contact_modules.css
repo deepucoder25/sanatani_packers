@@ -40,22 +40,256 @@
 #resultquotemodal { margin-top: 10px; text-align: center; font-weight: 600; }
 @media (max-width: 576px) { #quotemodal { padding: 15px; } .contact-form-header { padding: 12px 15px; } .contact-form-header span { font-size: 18px; } }
 
-/* Review Modal */
-.contact-review-form-label { font-weight: 600; font-size: 0.9rem; color: #475569; margin-bottom: 8px; }
-.contact-review-form-control { border-radius: 10px; border: 1px solid #e2e8f0; padding: 12px 15px; }
-.contact-review-form-control:focus { border-color: #ff6600; box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.1); outline: none; }
-.contact-rating-select { display: flex; gap: 10px; margin-bottom: 20px; }
-.contact-rating-item { cursor: pointer; font-size: 24px; color: #cbd5e1; transition: 0.2s; }
-.contact-rating-item.active { color: #f59e0b; }
-.contact-btn-submit-review { background: #ff6600; color: #fff; border: none; padding: 15px 30px; border-radius: 10px; font-weight: 700; width: 100%; transition: 0.3s; margin-top: 10px; }
-.contact-btn-submit-review:hover { background: #e65c00; transform: translateY(-2px); color: #fff; }
+/* Review Modal (#rvwmdl) Styles - Built with navigation.css variables */
+#rvwmdl .review-modal-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 20px 50px rgba(11, 38, 84, 0.22);
+}
 
-.contact-review-modal-content { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-.contact-review-modal-title { font-weight: 800; color: #001846; }
-.contact-review-rating-wrap { margin-top: -4px; }
-.contact-review-emoji { font-size: 28px; line-height: 1; }
-.contact-review-number { font-weight: 700; color: #475569; font-size: 1.1rem; }
-.contact-review-total { color: #94a3b8; font-weight: 600; }
+#rvwmdl .review-modal-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #153C7D 100%);
+    padding: 22px 28px;
+    position: relative;
+    border-bottom: 3px solid var(--secondary-color);
+    color: var(--white);
+}
+
+#rvwmdl .review-modal-title {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+#rvwmdl .review-modal-title i {
+    color: var(--secondary-color);
+}
+
+#rvwmdl .review-modal-subtitle {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.88rem;
+    font-weight: 400;
+}
+
+#rvwmdl .btn-close-custom {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+#rvwmdl .btn-close-custom:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+    transform: rotate(90deg) scale(1.05);
+}
+
+#rvwmdl .custom-field-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    display: block;
+}
+
+#rvwmdl .form-icon-wrap {
+    position: relative;
+}
+
+#rvwmdl .form-icon-wrap .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    z-index: 5;
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+#rvwmdl .form-icon-wrap .textarea-icon {
+    top: 18px;
+    transform: none;
+}
+
+#rvwmdl .custom-input {
+    background-color: var(--light-bg);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 16px 12px 46px;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: none;
+}
+
+#rvwmdl .custom-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+#rvwmdl .custom-input:focus {
+    background-color: var(--white);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(255, 134, 35, 0.15);
+    outline: none;
+}
+
+#rvwmdl .custom-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Rating Picker Section */
+#rvwmdl .rating-picker-wrapper {
+    background-color: var(--light-bg);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+}
+
+#rvwmdl .reviews-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
+#rvwmdl .reviews-rating > input {
+    display: none;
+}
+
+#rvwmdl .reviews-rating > label {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23cbd5e1' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.2s ease;
+}
+
+#rvwmdl .reviews-rating > label:hover,
+#rvwmdl .reviews-rating > label:hover ~ label,
+#rvwmdl .reviews-rating > input:checked ~ label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23FF8623' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    transform: scale(1.15);
+}
+
+#rvwmdl .rating-hint-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* File Upload Area */
+#rvwmdl .custom-file-upload-box {
+    background-color: var(--light-bg);
+    border: 2px dashed rgba(11, 38, 84, 0.18);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#rvwmdl .custom-file-upload-box:hover {
+    background-color: #FFF6EE;
+    border-color: var(--secondary-color);
+}
+
+#rvwmdl .upload-box-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+#rvwmdl .upload-icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 134, 35, 0.12);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+#rvwmdl .upload-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+#rvwmdl .upload-main-text {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+#rvwmdl .upload-sub-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Action Buttons */
+#rvwmdl .btn-submit-custom {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #E66A00 100%);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 11px 28px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 134, 35, 0.35);
+    transition: all 0.3s ease;
+}
+
+#rvwmdl .btn-submit-custom:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #153C7D 100%);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(11, 38, 84, 0.3);
+}
+
+#rvwmdl .btn-clear-custom {
+    background-color: var(--light-bg);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 11px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+#rvwmdl .btn-clear-custom:hover {
+    background-color: #E2E8F0;
+    color: var(--text-dark);
+}
 
 /* Tracking */
 .contact-tracking-details-card { display: none; }

@@ -181,4 +181,68 @@ class Reviews extends MX_Controller
             redirect('reviews');
         }
     }
+
+    public function review() {
+        header('Content-Type: application/json');
+        
+        $name = trim($this->input->post('name'));
+        $email = trim($this->input->post('email'));
+        $title = trim($this->input->post('title'));
+        $stars = (int) $this->input->post('stars');
+        $desc = trim($this->input->post('desc'));
+        
+        if (empty($name) || empty($email) || empty($desc)) {
+            echo json_encode(['err' => 1, 'msg' => 'Please fill in all required fields (Name, Email, and Review).']);
+            return;
+        }
+        
+        if ($stars < 1 || $stars > 5) {
+            $stars = 5;
+        }
+        
+        $img_name = '';
+        if (isset($_FILES['img']) && !empty($_FILES['img']['name'])) {
+            $upload_path = FCPATH . 'assets/uploads/reviewimg/';
+            if (!is_dir($upload_path)) {
+                @mkdir($upload_path, 0777, true);
+            }
+            $ext = pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION);
+            $img_name = time() . '_' . rand(1000, 9999) . '.' . $ext;
+            @move_uploaded_file($_FILES['img']['tmp_name'], $upload_path . $img_name);
+        }
+        
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'r_title' => !empty($title) ? $title : 'Verified Shifting',
+            'r_desc' => $desc,
+            'stars' => $stars,
+            'r_img' => $img_name,
+            'status' => 1,
+            'b_id' => 0,
+            'views' => 0,
+            'posted_date' => date('Y-m-d H:i:s')
+        );
+
+        $this->load->database();
+
+        // Prevent duplicate submissions within 30 seconds
+        $recent = $this->db->where('email', $email)
+                           ->where('r_desc', $desc)
+                           ->where('posted_date >=', date('Y-m-d H:i:s', time() - 30))
+                           ->get('reviews');
+
+        if ($recent && $recent->num_rows() > 0) {
+            echo json_encode(['err' => 0, 'msg' => 'Success! Thank you for your review! We appreciate your feedback.']);
+            return;
+        }
+
+        $insert = $this->db->insert('reviews', $data);
+
+        if ($insert) {
+            echo json_encode(['err' => 0, 'msg' => 'Success! Thank you for your review! We appreciate your feedback.']);
+        } else {
+            echo json_encode(['err' => 1, 'msg' => 'Unable to save review. Please try again.']);
+        }
+    }
 }

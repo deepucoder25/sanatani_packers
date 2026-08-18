@@ -26,7 +26,6 @@ $rev = $reviews->result();
 
 <div class="reviews-service-page reviews-feature-content-section">
     <div ng-app="reviewsApp" ng-controller="reviewsctrl">
-        <?php $this->load->view('reviews/reviewmodal') ?>
         <!-- Review Starts -->
         <br />
         <div class="container">
