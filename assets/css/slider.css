@@ -1,7 +1,11 @@
 /* --- 1. Hero Section Container --- */
 .home-page-hero {
     position: relative;
-    background: #FAFDFD url('../images/slider/slider.jpg') no-repeat right center / cover;
+    background-color: #FAFDFD;
+    background-image: url('../images/slider/slider.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
     overflow: hidden;
     color: var(--text-dark, #0F172A);
 }
@@ -14,6 +18,43 @@
 .hero-left-col {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+/* --- Hero City Breadcrumb --- */
+.hero-city-breadcrumb {
+    display: inline-block;
+}
+
+.hero-city-breadcrumb .breadcrumb {
+    background: rgba(11, 38, 84, 0.05);
+    border: 1px solid var(--border-color, rgba(11, 38, 84, 0.08));
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.hero-city-breadcrumb .breadcrumb-item a {
+    color: var(--primary-color, #0B2654);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.hero-city-breadcrumb .breadcrumb-item a:hover {
+    color: var(--secondary-color, #FF8623);
+}
+
+.hero-city-breadcrumb .breadcrumb-item.active {
+    color: var(--secondary-color, #FF8623);
+    font-weight: 750;
+}
+
+.hero-city-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    content: "›";
+    color: var(--secondary-color, #FF8623);
+    font-weight: 800;
+    font-size: 14px;
+    padding: 0 5px;
 }
 
 /* --- 2. Typography & Headlines --- */

@@ -1,37 +1,59 @@
-    <!-- FAQ Section -->
-        <div class="city-content-card mt-4">
-          <h3 class="city-section-title-sm"><i class="bi bi-patch-question me-2"></i>Frequently Asked Questions — Packers & Movers in <?= $city ?></h3>
-          <div class="city-faq-list mt-3" id="cityFaqAccordion">
-            <?php
-            $faqs = [
-              ["q" => "How early should I book shifting services in $city?",
-               "a" => "Booking at least 5–7 days earlier is recommended, especially for month-end dates and weekends when demand is highest."],
-              ["q" => "Do you provide packing materials?",
-               "a" => "Yes. Cartons, wrapping sheets, bubble rolls, and protective materials are included based on service type."],
-              ["q" => "Can I move only a few household items?",
-               "a" => "Absolutely. Small shifting requests and part-load transportation are available in $city."],
-              ["q" => "Are goods insured during relocation?",
-               "a" => "Insurance options are available for long-distance and valuable-item transportation."],
-              ["q" => "Do you handle local office shifts in $city?",
-               "a" => "Yes, including workstation packing, file movement, and electronic equipment relocation."],
-              ["q" => "What is the cost of packers and movers in $city?",
-               "a" => "Cost depends on distance, volume of goods, floor, and service type. Contact us for a free detailed quote."],
-            ];
-            foreach ($faqs as $i => $faq):
-            ?>
-            <div class="city-faq-item">
-              <button class="city-faq-btn <?= $i === 0 ? 'active' : '' ?>" type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#cfaq<?= $i ?>"
-                      aria-expanded="<?= $i === 0 ? 'true' : 'false' ?>">
-                <i class="bi bi-patch-question-fill faq-q-icon"></i>
-                <span><?= $faq['q'] ?></span>
-                <i class="bi bi-chevron-down faq-chevron"></i>
-              </button>
-              <div id="cfaq<?= $i ?>" class="collapse <?= $i === 0 ? 'show' : '' ?>">
-                <div class="city-faq-body"><?= $faq['a'] ?></div>
-              </div>
-            </div>
-            <?php endforeach; ?>
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+<!-- Unique FAQ Accordion Section -->
+<div class="pm-faq-wrapper mt-5">
+  <!-- FAQ Header Banner -->
+  <div class="pm-faq-header p-4 rounded-4 mb-4">
+    <div class="pm-section-badge mb-2">
+      <i class="bi bi-question-circle-fill text-pm-secondary me-1"></i>
+      <span>HELP &amp; SUPPORT</span>
+    </div>
+    <h3 class="pm-faq-section-title mb-1">
+      Frequently Asked Questions — <span class="text-pm-secondary"><?= htmlspecialchars($city) ?></span> Relocation
+    </h3>
+    <p class="text-pm-muted mb-0 small">
+      Everything you need to know about shifting rates, insurance, packing materials, and delivery timing in <?= htmlspecialchars($city) ?>.
+    </p>
+  </div>
+
+  <!-- Accordion List -->
+  <div class="pm-faq-accordion" id="pmCityFaqAccordion">
+    <?php
+    $faqs = [
+      ["q" => "How early should I book shifting services in $city?",
+       "a" => "We recommend booking at least 3–5 days in advance for local shifting in $city, and 7 days prior for intercity domestic moves to secure preferred truck slots and packing teams."],
+      ["q" => "Do you provide premium packing materials?",
+       "a" => "Yes! We use 5-layer heavy duty packing materials including bubble wrap, corrugated sheets, stretch film, waterproof plastic rolls, and heavy carton boxes for zero-damage transport."],
+      ["q" => "Can I move only a few household items or single vehicle?",
+       "a" => "Absolutely. We offer customized part-load (shared truck) transportation as well as single bike/car moving services within and out of $city."],
+      ["q" => "Are my household goods insured during relocation?",
+       "a" => "Yes, we provide 100% Transit Insurance coverage option covering all unpredicted transit damages, accidents, or risks for complete peace of mind."]
+    ];
+
+    foreach ($faqs as $i => $faq):
+      $num = sprintf("%02d", $i + 1);
+      $is_first = ($i === 0);
+    ?>
+    <div class="pm-faq-card mb-3">
+      <button class="pm-faq-btn <?= $is_first ? '' : 'collapsed' ?>" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#pmFaqCol<?= $i ?>"
+              aria-expanded="<?= $is_first ? 'true' : 'false' ?>">
+        <span class="pm-faq-num me-3"><?= $num ?></span>
+        <span class="pm-faq-q-text flex-grow-1 text-start me-2"><?= htmlspecialchars($faq['q']) ?></span>
+        <span class="pm-faq-toggle-icon">
+          <i class="bi bi-chevron-down"></i>
+        </span>
+      </button>
+      <div id="pmFaqCol<?= $i ?>" class="collapse <?= $is_first ? 'show' : '' ?>" data-bs-parent="#pmCityFaqAccordion">
+        <div class="pm-faq-answer p-4">
+          <div class="d-flex align-items-start gap-2">
+            <i class="bi bi-shield-check text-pm-secondary fs-5 flex-shrink-0 mt-1"></i>
+            <p class="mb-0 text-pm-dark leading-relaxed"><?= htmlspecialchars($faq['a']) ?></p>
           </div>
         </div>
+      </div>
+    </div>
+    <?php endforeach; ?>
+  </div>
+</div>

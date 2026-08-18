@@ -21,17 +21,8 @@ if (strtolower($city) == "") {
             <p>
               People searching for <strong>Top Packers and Movers in  $city </strong> usually want one thing — safe shifting without confusion. Nobody wants broken furniture or late delivery calls after packing their whole house.
             </p>
-          </div>
-
-          <!-- Feature Pills -->
-          <div class='city-feature-pills'>
-            <div class='city-pill'><i class='bi bi-shield-check'></i> 100% Insured Shifting</div>
-            <div class='city-pill'><i class='bi bi-truck'></i> Real-time GPS Tracking</div>
-            <div class='city-pill'><i class='bi bi-box-seam'></i> Premium Multi-layer Packing</div>
-            <div class='city-pill'><i class='bi bi-clock-history'></i> On-Time Delivery Guaranteed</div>
-          </div>
-       
    ";
+
    $htmlcontent1 = "
     <!-- What Makes Relocation Different -->
         <div class='city-content-card mt-4'>
