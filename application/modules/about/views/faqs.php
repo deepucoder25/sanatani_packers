@@ -1,8 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<!-- Module Stylesheet -->
-<link rel="stylesheet" href="<?= base_url('assets/css/about_modules.css?v=' . time()) ?>">
-
 <!-- 1. Breadcrumbs Header Banner -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
     'bc_h1' => 'Frequently Asked Questions',
