@@ -5,28 +5,23 @@ document.addEventListener("DOMContentLoaded", function () {
         style.id = "validation-custom-styles";
         style.innerHTML = `
             .input-error-highlight {
-                border: 2px solid #ff3333 !important;
-                box-shadow: 0 0 10px rgba(255, 51, 51, 0.5) !important;
-                transition: all 0.3s ease-in-out !important;
+                border: 1.5px solid #EF4444 !important;
+                background-color: #FEF2F2 !important;
+                box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15) !important;
+                transition: all 0.25s ease-in-out !important;
             }
             .field-error-msg {
-                color: #ff3333 !important;
-                font-size: 0.75rem !important;
-                font-weight: bold !important;
+                color: #EF4444 !important;
+                font-size: 0.78rem !important;
+                font-weight: 600 !important;
                 margin-top: 5px !important;
-                margin-bottom: 5px !important;
+                margin-bottom: 2px !important;
                 text-align: left !important;
-                padding-left: 10px !important;
+                padding-left: 4px !important;
                 display: flex !important;
                 align-items: center !important;
                 gap: 5px !important;
                 animation: fieldErrorFadeIn 0.3s ease-out !important;
-            }
-            .field-wrap .field-ico {
-                top: 14px !important;
-            }
-            .field-wrap.top-ico .field-ico {
-                top: 14px !important;
             }
             @keyframes fieldErrorFadeIn {
                 from { opacity: 0; transform: translateY(-5px); }
@@ -38,6 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Attach submit handler to ALL forms with class .ajax-form
     document.querySelectorAll(".ajax-form").forEach(form => {
+
+        // Real-time error clearing on typing
+        form.querySelectorAll("input, textarea").forEach(input => {
+            input.addEventListener("input", function() {
+                const group = this.closest(".qte-input-group") || this.closest(".field-wrap") || this.closest(".form-group") || this;
+                group.classList.remove("input-error-highlight");
+                this.classList.remove("input-error-highlight");
+                const nextErr = group.nextElementSibling;
+                if (nextErr && nextErr.classList.contains("field-error-msg")) {
+                    nextErr.remove();
+                }
+            });
+        });
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -56,26 +64,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let hasErrors = false;
 
-            // Helper to show field error
+            // Helper to show field error cleanly outside container
             function showError(inputEl, message) {
                 if (!inputEl) return;
-                inputEl.classList.add("input-error-highlight");
+                
+                const targetGroup = inputEl.closest(".qte-input-group") || inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl;
+                targetGroup.classList.add("input-error-highlight");
                 
                 const errorDiv = document.createElement("div");
                 errorDiv.className = "field-error-msg";
                 errorDiv.innerHTML = `<i class="bi bi-exclamation-circle-fill"></i> ${message}`;
                 
-                // Find the wrapper (either .field-wrap, .form-group, or parent)
-                const wrapper = inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl.parentElement;
-                
-                // Force wrap if wrapper is a flex container
-                const computedStyle = window.getComputedStyle(wrapper);
-                if (computedStyle.display === "flex") {
-                    wrapper.style.flexWrap = "wrap";
-                }
-                
-                // Append inside the wrapper
-                wrapper.appendChild(errorDiv);
+                // Insert error message neatly AFTER the group container
+                targetGroup.insertAdjacentElement('afterend', errorDiv);
             }
 
             // Validate Name

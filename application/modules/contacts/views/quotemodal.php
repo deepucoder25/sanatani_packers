@@ -69,11 +69,11 @@
 
                     <!-- Relocation Details Message -->
                     <div class="col-12">
-                        <div class="qte-input-group align-items-start">
-                            <div class="qte-input-icon pt-2.5">
+                        <div class="qte-input-group qte-textarea-group">
+                            <div class="qte-input-icon qte-textarea-icon">
                                 <i class="bi bi-chat-left-text-fill"></i>
                             </div>
-                            <textarea name="message" rows="4" class="qte-input-control" placeholder="Describe your relocation needs..."></textarea>
+                            <textarea name="message" rows="3" class="qte-input-control" placeholder="Describe your relocation needs..."></textarea>
                         </div>
                     </div>
                 </div>

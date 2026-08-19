@@ -1193,6 +1193,24 @@ select.cnt-input-field {
     box-shadow: none !important;
 }
 
+.qte-textarea-group {
+    align-items: flex-start !important;
+    border-radius: 16px !important;
+    padding-top: 2px !important;
+}
+
+.qte-textarea-icon {
+    padding-top: 13px !important;
+    align-self: flex-start !important;
+}
+
+textarea.qte-input-control {
+    min-height: 90px !important;
+    padding-top: 12px !important;
+    line-height: 1.55 !important;
+    resize: vertical;
+}
+
 .qte-input-control:focus {
     outline: none !important;
     box-shadow: none !important;
