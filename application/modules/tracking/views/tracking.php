@@ -6,139 +6,219 @@ $this->load->view('about/dynamic_breadcrumbs', [
     'bc_desc' => 'Track your shipment in real-time with live GPS location updates, consignment status & estimated delivery timelines across India.'
 ]); 
 ?>
-<div class="container py-5">
-    <div class="row">
-        <!-- Center Column for Premium Design -->
-        <div class="col-lg-9 mx-auto">
-            <div class="premium-tracking-card p-4 p-md-5 mb-4 bg-white rounded-4 shadow-sm text-center position-relative overflow-hidden">
-                <!-- Top Decorative Line -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #031b4e, #ff7a16);"></div>
-                
-                <h3 class="mb-3" style="color: #031b4e; font-weight: 800; letter-spacing: -0.5px;">Track Your Shipment</h3>
-                <p class="text-muted mb-4 px-md-5">Enter your tracking number below to get real-time updates and the accurate status of your cargo.</p>
-                
-                <form action="" id="tracking_form" class="mx-auto" style="max-width: 650px;">
-                    <div class="d-flex flex-column flex-md-row gap-3">
-                        <div class="position-relative flex-grow-1">
-                            <i class="bi bi-box position-absolute" style="left: 20px; top: 50%; transform: translateY(-50%); color: #ff7a16; font-size: 1.1rem;"></i>
-                            <input type="text" class="form-control form-control-lg premium-tracking-input" id="trackingNumber" name="trackingNumber" placeholder="Enter Tracking Number (e.g. 123456)" required style="padding-left: 55px; border-radius: 50px; border: 2px solid #f1f5f9; box-shadow: none; font-size: 16px; height: 54px; background-color: #f8fafc;">
-                        </div>
-                        <button type="submit" class="btn btn-lg premium-tracking-btn px-4" id="tracking_submit" style="border-radius: 50px; background-color: #ff7a16; color: white; font-weight: 700; border: none; transition: all 0.3s; height: 54px; min-width: 150px;">
-                            <i class="bi bi-search me-2"></i> Track Now
-                        </button>
-                        <button type="reset" class="btn btn-lg btn-light rounded-circle premium-clear-btn d-none d-md-flex align-items-center justify-content-center" style="width: 54px; height: 54px; border: 2px solid #f1f5f9; color: #64748b; transition: all 0.3s; flex-shrink: 0;" title="Clear">
-                            <i class="bi bi-x-lg"></i>
-                        </button>
+
+<section class="track-page-section">
+    <div class="container">
+        <div class="row">
+            <!-- Center Column for Premium Tracking Card -->
+            <div class="col-lg-10 col-xl-9 mx-auto">
+
+                <!-- 1. Search Box Card -->
+                <div class="track-search-card text-center mb-4">
+                    <div class="cnt-section-badge mb-2">
+                        <i class="bi bi-geo-alt-fill me-1"></i> LIVE CONSIGNMENT TRACKING
                     </div>
-                    <div id="statusMessage" class="mt-3 text-start"></div>
-                </form>
-            </div>
 
-            <!-- Tracking Details Wrapper (Removed contact-tracking-form div to flatten) -->
-            <div class="w-100">
+                    <h2 class="track-title mb-2">
+                        Track Your <span class="text-cnt-secondary">Shipment</span>
+                    </h2>
+                    <p class="track-subtitle">
+                        Enter your LR / consignment tracking number below to view real-time location updates, transit status, and estimated delivery schedule.
+                    </p>
 
-                <!-- Tracking Details (hidden until data loads) -->
-                <div class="contact-tracking-details-card mt-4" style="display: none;">
-                    <div class="card">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Tracking Details</h5>
+                    <form action="" id="tracking_form" class="mx-auto" style="max-width: 650px;">
+                        <div class="track-input-group">
+                            <i class="bi bi-box-seam-fill track-input-icon"></i>
+                            <input type="text" class="form-control track-input-field flex-grow-1" id="trackingNumber" name="trackingNumber" placeholder="Enter Tracking Number (e.g. 123456)" required>
+                            <button type="submit" class="track-submit-btn" id="tracking_submit">
+                                <i class="bi bi-search"></i> <span>Track Now</span>
+                            </button>
+                            <button type="reset" class="track-reset-btn ms-2 d-none d-sm-flex" title="Reset">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
                         </div>
-                        <div class="card-body">
-                            <div class="row mb-4">
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">Customer Name: </span></p>
-                                    <p id="customerName"></p>
+                        <div id="statusMessage" class="mt-3 text-start"></div>
+                    </form>
+
+                    <!-- Feature Badges -->
+                    <div class="track-badge-row">
+                        <div class="track-feature-badge">
+                            <i class="bi bi-shield-check"></i> 100% Verified Tracking
+                        </div>
+                        <div class="track-feature-badge">
+                            <i class="bi bi-lightning-charge-fill"></i> Instant Status Updates
+                        </div>
+                        <div class="track-feature-badge">
+                            <i class="bi bi-truck"></i> Pan-India Coverage
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Tracking Details Wrapper (hidden until data loads) -->
+                <div class="contact-tracking-details-card mt-4" style="display: none;">
+                    <div class="track-details-wrapper">
+                        
+                        <!-- Header Bar -->
+                        <div class="track-details-header">
+                            <h4 class="track-details-title">
+                                <i class="bi bi-diagram-3-fill text-cnt-secondary"></i>
+                                Shipment Status Details
+                            </h4>
+                            <span class="track-status-pill-active">
+                                <span class="pm-pulse-dot me-2"></span> Active Cargo Status
+                            </span>
+                        </div>
+
+                        <!-- 6 Info Grid Cards -->
+                        <div class="track-info-grid">
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-person-fill"></i>
                                 </div>
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">LR NO.: </span></p>
-                                    <p id="lrNumber"></p>
-                                </div>
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">Shipment Type: </span></p>
-                                    <p id="shipmentType"></p>
-                                </div>
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">ORIGIN: </span></p>
-                                    <p id="origin"></p>
-                                </div>
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">DESTINATION: </span></p>
-                                    <p id="destination"></p>
-                                </div>
-                                <div class="col-md-2 contact-track-details-flex">
-                                    <p><span class="contact-tracking-label">Expected Delivery Date: </span></p>
-                                    <span id="ex_del_date"></span> <i class="bi bi-check-circle-fill contact-tracking-success"></i>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">Customer Name</span>
+                                    <span class="track-info-val" id="customerName">-</span>
                                 </div>
                             </div>
 
-                            <!-- Progress Bar Tracking -->
-                            <div class="contact-tracking-progress mb-4">
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-file-text-fill"></i>
+                                </div>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">LR Number</span>
+                                    <span class="track-info-val" id="lrNumber">-</span>
+                                </div>
+                            </div>
+
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-truck-front-fill"></i>
+                                </div>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">Shipment Type</span>
+                                    <span class="track-info-val" id="shipmentType">-</span>
+                                </div>
+                            </div>
+
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-geo-alt-fill text-primary"></i>
+                                </div>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">Origin</span>
+                                    <span class="track-info-val" id="origin">-</span>
+                                </div>
+                            </div>
+
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-pin-map-fill text-cnt-secondary"></i>
+                                </div>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">Destination</span>
+                                    <span class="track-info-val" id="destination">-</span>
+                                </div>
+                            </div>
+
+                            <div class="track-info-box">
+                                <div class="track-info-icon">
+                                    <i class="bi bi-calendar2-check-fill text-success"></i>
+                                </div>
+                                <div class="track-info-content">
+                                    <span class="track-info-label">Expected Delivery</span>
+                                    <span class="track-info-val text-success">
+                                        <span id="ex_del_date">-</span> <i class="bi bi-check-circle-fill contact-tracking-success ms-1"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar Timeline Section -->
+                        <div class="track-timeline-section">
+                            <div class="contact-tracking-progress">
                                 <div class="contact-progress-bar-container">
                                     <div class="contact-progress">
                                         <div class="contact-progress-bar" role="progressbar"></div>
                                     </div>
                                     <div class="contact-progress-steps">
                                         <div class="contact-step step-processing">
-                                            <div class="contact-step-icon">1</div>
+                                            <div class="contact-step-icon"><i class="bi bi-gear-fill"></i></div>
                                             <div class="contact-step-label">Process</div>
                                             <div class="contact-step-date" id="processing-date"></div>
                                         </div>
                                         <div class="contact-step step-picked">
-                                            <div class="contact-step-icon">2</div>
+                                            <div class="contact-step-icon"><i class="bi bi-box-seam"></i></div>
                                             <div class="contact-step-label">Picked</div>
                                             <div class="contact-step-date" id="picked-date"></div>
                                         </div>
                                         <div class="contact-step step-transit">
-                                            <div class="contact-step-icon">3</div>
+                                            <div class="contact-step-icon"><i class="bi bi-truck"></i></div>
                                             <div class="contact-step-label">In Transit</div>
                                             <div class="contact-step-date" id="transit-date"></div>
                                         </div>
                                         <div class="contact-step step-delivered">
-                                            <div class="contact-step-icon">4</div>
+                                            <div class="contact-step-icon"><i class="bi bi-check-lg"></i></div>
                                             <div class="contact-step-label">Delivered</div>
                                             <div class="contact-step-date" id="delivered-date"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Tracking Details Table -->
-                            <div class="contact-tracking-table mt-4">
-                                <h6 class="border-bottom pb-2">TRACKING HISTORY</h6>
+                        <!-- Tracking History Table -->
+                        <div class="track-history-section">
+                            <h5 class="track-section-title-sm">
+                                <i class="bi bi-clock-history text-cnt-secondary"></i> TRACKING HISTORY
+                            </h5>
+                            <div class="track-history-table">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead class="table-light">
+                                    <table class="table align-middle">
+                                        <thead>
                                             <tr>
                                                 <th>STATUS</th>
                                                 <th>DATE</th>
-                                                <th>EVENT</th>
+                                                <th>EVENT / REMARKS</th>
                                             </tr>
                                         </thead>
                                         <tbody id="trackingTableBody">
-                                            <!-- Table rows will be injected here -->
+                                            <!-- Dynamic Rows Injected by JS -->
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="mt-4">
-                                <p class="text-muted">For more details, Please call us: 
-                                    <strong class="me-2"><i class="bi bi-telephone-fill"></i> Phone:</strong> <a class="contact-tracking-link d-inline-block mb-2" href="<?= $phonehtml ?>"><?= $phone ?></a>
-                                    <br><br>
-                                    or leave your
-                                    <a class="contact-tracking-underline" href="<?= site_url('contacts') ?>">contact
-                                        number / email
-                                        id</a> and our representative will contact you.
-                                </p>
+                        <!-- Support Callout Footer -->
+                        <div class="track-support-footer">
+                            <div class="track-support-info">
+                                <div class="track-support-icon">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-cnt-primary mb-1">Need Direct Support for your Consignment?</h6>
+                                    <p class="text-cnt-muted small mb-0">Call our 24/7 helpdesk or get in touch with our operations team.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="<?= $phonehtml ?>" class="btn btn-warning btn-sm rounded-pill px-3 py-2 fw-bold text-dark d-inline-flex align-items-center gap-1 shadow-sm">
+                                    <i class="bi bi-telephone-fill"></i> Call <?= $phone ?>
+                                </a>
+                                <a href="<?= site_url('contacts') ?>" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-2 fw-bold d-inline-flex align-items-center gap-1">
+                                    <i class="bi bi-envelope-fill"></i> Contact Us
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
