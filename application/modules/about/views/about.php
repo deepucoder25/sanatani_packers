@@ -18,7 +18,7 @@
             <div class="col-lg-6">
                 <div class="position-relative me-lg-3">
                     <div class="about-img-box-v2">
-                        <img src="<?= base_url('assets/images/home_modules/about-main.jpg') ?>" alt="<?= $company3 ?>" class="img-fluid w-100 about-img-v2">
+                        <img src="<?= base_url('assets/images/about_modules/about-page.jpg') ?>" alt="<?= $company3 ?>" class="img-fluid w-100 about-img-v2">
                         <div class="about-img-overlay-v2"></div>
                     </div>
                     

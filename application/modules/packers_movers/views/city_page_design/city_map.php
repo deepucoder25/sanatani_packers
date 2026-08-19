@@ -10,7 +10,7 @@ foreach ($cities as $ct) {
 
 if (!empty($lat) && !empty($lon)) { ?>
   <!-- Styled Map Wrapper Card -->
-  <div class="pm-map-wrapper-card mb-4">
+  <div class="pm-map-wrapper-card h-100 d-flex flex-column justify-content-between">
     <!-- Header Banner -->
     <div class="pm-map-header-bar p-3 p-md-4 d-flex flex-wrap align-items-center justify-content-between gap-2">
       <div>
@@ -31,11 +31,12 @@ if (!empty($lat) && !empty($lon)) { ?>
     </div>
 
     <!-- Map Container -->
-    <div class="pm-map-iframe-container position-relative">
+    <div class="pm-map-iframe-container position-relative flex-grow-1 d-flex flex-column">
       <iframe
           width="100%"
-          height="380"
-          class="pm-city-map-iframe"
+          height="100%"
+          style="min-height: 320px;"
+          class="pm-city-map-iframe flex-grow-1"
           loading="lazy"
           allowfullscreen
           src="https://www.google.com/maps?q=<?php echo $lat; ?>,<?php echo $lon; ?>&hl=en&z=12&output=embed">
