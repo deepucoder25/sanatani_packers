@@ -3,9 +3,13 @@
 <main class="main">
     <!-- Breadcrumbs Section -->
     <?php 
+$post_title = !empty($query[0]->title) ? $query[0]->title : 'Blog Details';
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => isset($post['title']) ? $post['title'] : 'Blog Details',
-    'bc_h1' => isset($post['title']) ? $post['title'] : 'Blog Details',
+    'breadcrumbs' => [
+        ['name' => 'Blog', 'url' => site_url('blog/view')],
+        ['name' => $post_title]
+    ],
+    'bc_h1' => $post_title,
     'bc_desc' => 'Read in-depth relocation insights, step-by-step moving checklists, packing safety tips & expert industry advice.'
 ]); 
 ?>
@@ -20,19 +24,29 @@ $this->load->view('about/dynamic_breadcrumbs', [
                         <!-- Image -->
                         <div class="mb-4 rounded-4 overflow-hidden shadow-sm position-relative">
                             <?php 
-                            $image_path = FCPATH . 'uploads/blogs/' . @$query[0]->image;
-                            if (@$query[0]->image && file_exists($image_path)): ?>
-                                <img src="<?= base_url('uploads/blogs/' . @$query[0]->image) ?>" alt="<?= htmlspecialchars(@$query[0]->title) ?>" class="img-fluid w-100 blog-details-img">
-                            <?php else: ?>
-                                <img src="<?= base_url('assets/images/about/packers_movers.jpg') ?>" alt="Default Image" class="img-fluid w-100 blog-details-img">
-                            <?php endif; ?>
+                            $view_img = !empty($img) ? $img : base_url('assets/images/about/packers_movers.jpg');
+                            $b_img = @$query[0]->image;
+                            if (!empty($b_img)) {
+                                if (file_exists(FCPATH . 'assets/uploads/blog/' . $b_img)) {
+                                    $view_img = base_url('assets/uploads/blog/' . $b_img);
+                                } elseif (file_exists(FCPATH . 'assets/uploads/blog/thumb/' . $b_img)) {
+                                    $view_img = base_url('assets/uploads/blog/thumb/' . $b_img);
+                                } elseif (file_exists(FCPATH . 'uploads/blogs/' . $b_img)) {
+                                    $view_img = base_url('uploads/blogs/' . $b_img);
+                                }
+                            }
+                            ?>
+                            <img src="<?= $view_img ?>" alt="<?= htmlspecialchars(@$query[0]->title ?? 'Blog Image') ?>" class="img-fluid w-100 blog-details-img">
                         </div>
                         
                         <!-- Meta Info -->
                         <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 pb-3 border-bottom">
                             <div class="d-flex gap-3 text-muted small">
-                                <span class="d-flex align-items-center gap-2"><i class="bi bi-calendar-event blog-icon-primary"></i> <?= date('M d, Y', strtotime(@$query[0]->created_at)) ?></span>
-                                <span class="d-flex align-items-center gap-2"><i class="bi bi-person-circle text-success"></i> By Admin</span>
+                                <?php
+                                $date_val = !empty(@$query[0]->date) ? @$query[0]->date : (!empty(@$query[0]->created_at) ? @$query[0]->created_at : date('Y-m-d'));
+                                ?>
+                                <span class="d-flex align-items-center gap-2"><i class="bi bi-calendar-event blog-icon-primary"></i> <?= date('M d, Y', strtotime($date_val)) ?></span>
+                                <span class="d-flex align-items-center gap-2"><i class="bi bi-person-circle text-success"></i> By <?= htmlspecialchars(!empty(@$query[0]->author) ? @$query[0]->author : 'Admin') ?></span>
                             </div>
                             <div>
                                 <button class="btn btn-sm px-3 rounded-pill fw-bold blog-btn-share" data-bs-toggle="modal" data-bs-target="#shareModal">
@@ -44,7 +58,7 @@ $this->load->view('about/dynamic_breadcrumbs', [
                         <!-- Blog Details -->
                         <h2 class="fw-bold mb-4 blog-details-title"><?= @$query[0]->title ?></h2>
                         <div class="blog-content-wrapper text-muted">
-                            <?= nl2br(@$query[0]->content) ?>
+                            <?= !empty(@$query[0]->description) ? @$query[0]->description : nl2br(@$query[0]->content ?? '') ?>
                         </div>
                     </div>
                 </div>
@@ -58,10 +72,19 @@ $this->load->view('about/dynamic_breadcrumbs', [
                                 <?php if (!empty($recent_posts)): ?>
                                     <?php foreach ($recent_posts as $post_arr): $post = (object)$post_arr; ?>
                                         <?php
-                                        $image_file = $post->image;
-                                        $full_path = FCPATH . 'uploads/blogs/' . $image_file;
-                                        $imagePath = ($image_file && file_exists($full_path)) ? base_url('uploads/blogs/' . $image_file) : base_url('assets/images/about/packers_movers.jpg');
+                                        $image_file = $post->image ?? '';
+                                        $imagePath = base_url('assets/images/about/packers_movers.jpg');
+                                        if (!empty($image_file)) {
+                                            if (file_exists(FCPATH . 'assets/uploads/blog/' . $image_file)) {
+                                                $imagePath = base_url('assets/uploads/blog/' . $image_file);
+                                            } elseif (file_exists(FCPATH . 'assets/uploads/blog/thumb/' . $image_file)) {
+                                                $imagePath = base_url('assets/uploads/blog/thumb/' . $image_file);
+                                            } elseif (file_exists(FCPATH . 'uploads/blogs/' . $image_file)) {
+                                                $imagePath = base_url('uploads/blogs/' . $image_file);
+                                            }
+                                        }
                                         $custom_slug = !empty($post->slug) ? $post->slug : rtrim(str_replace("--", "-", urlencode(str_replace(" ", "-", str_replace(",", " ", $post->title)))), "-");
+                                        $p_date = !empty($post->date) ? $post->date : (!empty($post->created_at) ? $post->created_at : date('Y-m-d'));
                                         ?>
                                         <a href="<?= site_url('blog/'.$custom_slug) ?>" class="d-flex align-items-center gap-3 mb-3 text-decoration-none post-link-item blog-post-link-item">
                                             <div class="flex-shrink-0">
@@ -69,7 +92,7 @@ $this->load->view('about/dynamic_breadcrumbs', [
                                             </div>
                                             <div>
                                                 <h6 class="fw-bold text-dark mb-1 blog-post-title"><?= $post->title ?></h6>
-                                                <small class="text-muted"><i class="bi bi-clock me-1"></i> <?= date('M d, Y', strtotime($post->created_at)) ?></small>
+                                                <small class="text-muted"><i class="bi bi-clock me-1"></i> <?= date('M d, Y', strtotime($p_date)) ?></small>
                                             </div>
                                         </a>
                                     <?php endforeach; ?>

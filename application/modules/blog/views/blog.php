@@ -35,13 +35,22 @@
                         $custom_slug = !empty($b->slug) ? $b->slug : rtrim(str_replace("--", "-", urlencode(str_replace(" ", "-", str_replace(",", " ", $b->title)))), "-");
                         $link = strtolower(site_url('blog/' . $custom_slug));
 
-                        $image_path = FCPATH . 'uploads/blogs/' . $b->image;
-                        $img = ($b->image && file_exists($image_path)) ? base_url("uploads/blogs/{$b->image}") : base_url('assets/images/about/packers_movers.jpg');
+                        $img = base_url('assets/images/about/packers_movers.jpg');
+                        if (!empty($b->image)) {
+                            if (file_exists(FCPATH . 'assets/uploads/blog/' . $b->image)) {
+                                $img = base_url('assets/uploads/blog/' . $b->image);
+                            } elseif (file_exists(FCPATH . 'assets/uploads/blog/thumb/' . $b->image)) {
+                                $img = base_url('assets/uploads/blog/thumb/' . $b->image);
+                            } elseif (file_exists(FCPATH . 'uploads/blogs/' . $b->image)) {
+                                $img = base_url('uploads/blogs/' . $b->image);
+                            }
+                        }
 
                         // Handle date parsing
-                        $created_at = isset($b->created_at) ? $b->created_at : date('Y-m-d H:i:s');
-                        $day = date('d', strtotime($created_at));
-                        $month = date('M', strtotime($created_at));
+                        $date_str = !empty($b->date) ? $b->date : (!empty($b->created_at) ? $b->created_at : date('Y-m-d'));
+                        $time_stamp = strtotime($date_str);
+                        $day = $time_stamp ? date('d', $time_stamp) : date('d');
+                        $month = $time_stamp ? date('M', $time_stamp) : date('M');
 
                         $schemaData[] = [
                             "@context" => "https://schema.org",

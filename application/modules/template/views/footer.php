@@ -143,6 +143,7 @@ $floatingWhatsappLink = !empty($whatsapphtml)
               <li><a href="<?= site_url('testimonials') ?>"><i class="bi bi-chevron-right"></i> Testimonials</a></li>
               <li><a href="<?= site_url('our-branches') ?>"><i class="bi bi-chevron-right"></i> Our Branches</a></li>
               <li><a href="<?= site_url('photo-gallery') ?>"><i class="bi bi-chevron-right"></i> Photo Gallery</a></li>
+              <li><a href="<?= site_url('blog/view') ?>"><i class="bi bi-chevron-right"></i> Our Blog</a></li>
               <li><a href="<?= site_url('contact-us') ?>"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
               <li><a href="<?= site_url('tracking') ?>"><i class="bi bi-chevron-right"></i> Track Shipment</a></li>
             </ul>

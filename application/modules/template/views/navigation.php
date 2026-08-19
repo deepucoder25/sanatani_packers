@@ -205,6 +205,7 @@
               <li><a href="<?= site_url('testimonials') ?>" class="<?= $segment1 === 'testimonials' ? 'active' : '' ?>"><i class="bi bi-chat-quote-fill"></i> Testimonials</a></li>
               <li><a href="<?= site_url('our-branches') ?>" class="<?= $segment1 === 'our-branches' ? 'active' : '' ?>"><i class="bi bi-geo-alt-fill"></i> Our Branches</a></li>
               <li><a href="<?= site_url('photo-gallery') ?>" class="<?= $segment1 === 'photo-gallery' ? 'active' : '' ?>"><i class="bi bi-images"></i> Photo Gallery</a></li>
+              <li><a href="<?= site_url('blog/view') ?>" class="<?= $active_tab === 'blog' ? 'active' : '' ?>"><i class="bi bi-journal-text"></i> Our Blog</a></li>
               <li><a href="<?= site_url('contact-us') ?>" class="<?= $segment1 === 'contact-us' ? 'active' : '' ?>"><i class="bi bi-envelope-fill"></i> Contact Us</a></li>
               <li><a href="<?= site_url('tracking') ?>" class="<?= $segment1 === 'tracking' ? 'active' : '' ?>"><i class="bi bi-geo-fill"></i> Track Shipment</a></li>
             </ul>
