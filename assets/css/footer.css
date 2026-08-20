@@ -128,13 +128,15 @@
   transform: translateY(-2px);
 }
 
-.brand-trishul-wrap {
+.brand-trishul-wrap,
+.brand-panchshul-wrap {
   margin-bottom: 4px;
   display: flex;
   justify-content: center;
 }
 
-.trishul-svg path {
+.trishul-svg path,
+.panchshul-svg path {
   filter: drop-shadow(0 2px 6px rgba(255, 134, 35, 0.5));
 }
 

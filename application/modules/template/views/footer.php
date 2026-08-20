@@ -93,18 +93,13 @@ $floatingWhatsappLink = !empty($whatsapphtml)
           <div class="footer-brand-wrap">
             <!-- Unique Text Brand Logo -->
             <a href="<?= site_url() ?>" class="footer-text-brand" aria-label="<?= $company3 ?>">
-              <div class="brand-trishul-wrap">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="trishul-svg">
-                  <path d="M12 2V22M12 2L8 7M12 2L16 7M5 7C5 12 8 15 12 15C16 15 19 12 19 7" stroke="#FF8623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <div class="brand-panchshul-wrap brand-trishul-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="panchshul-svg trishul-svg">
+                  <path d="M12 2V22M12 2L9.5 5.5M12 2L14.5 5.5M8.5 4.5C8.5 8.5 10 11 12 11C14 11 15.5 8.5 15.5 4.5M4.5 7.5C4.5 12.5 8 15.5 12 15.5C16 15.5 19.5 12.5 19.5 7.5" stroke="#FF8623" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <div class="brand-eyebrow">
-                <span class="eyebrow-line"></span>
-                <span class="eyebrow-text">DEOGHAR</span>
-                <span class="eyebrow-line"></span>
-              </div>
               <div class="brand-main-title">
-                <span class="title-white">SANAT</span><span class="title-orange">ANI</span>
+                <span class="title-white">SANATANI</span>
               </div>
               <div class="brand-sub-title">
                 <span class="sub-dash">—</span> PACKERS AND MOVERS <span class="sub-dash">—</span>
