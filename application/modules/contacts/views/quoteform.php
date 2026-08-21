@@ -51,7 +51,7 @@
       <div class="col-lg-2 col-md-4 col-6">
         <div class="input-wrap-custom">
           <i class="bi bi-geo-alt input-icon-custom"></i>
-          <input type="text" name="mfrom" class="form-control-custom" value="<?= @$city ? $city : 'Deoghar' ?>" placeholder="Moving From" required>
+          <input type="text" name="mfrom" class="form-control-custom" placeholder="Moving From" required>
         </div>
       </div>
 
